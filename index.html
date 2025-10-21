@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="title" content="AndroidControl-Pro: Revealing the True Potential of GUI Agents through Benchmark Purification">
+  <meta name="description" content="We reveal systemic flaws in existing GUI benchmarks and introduce AndroidControl-Pro, a purified benchmark for accurate evaluation. Our new SOTA model, Magma-R1, trained on just 2,400 high-quality samples, proves that data quality fundamentally trumps quantity in training high-performance GUI agents.">
+  <meta name="keywords" content="GUI Agents, Benchmark Purification, Data Quality, Reinforcement Learning, Autonomous Agents, AndroidControl, Magma-R1, Deep Learning, Computer Vision, AI">
+  <meta name="author" content="Anonymous">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Performance optimization -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Anonymous Research">
+  <meta property="og:title" content="AndroidControl-Pro: Revealing the True Potential of GUI Agents through Benchmark Purification">
+  <meta property="og:description" content="Our work introduces a purified benchmark, AndroidControl-Pro, to address systemic flaws in GUI agent evaluation, and a new SOTA model, Magma-R1, demonstrating that data quality is more critical than quantity.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/AndroidControl-Pro">
+  <meta property="og:image" content="static/images/data_quality_vs_quantity.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Data Quality vs Quantity in GUI Agent Training">
+  <meta property="article:published_time" content="2024-09-01T00:00:00.000Z">
+  <meta property="article:author" content="Anonymous">
+  <meta property="article:section" content="Research">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <meta name="twitter:creator" content="@feizuo_handle">
+  <meta name="twitter:title" content="AndroidControl-Pro: Revealing the True Potential of GUI Agents through Benchmark Purification">
+  <meta name="twitter:description" content="We show that data quality, not quantity, is the key to high-performance GUI agents with our new benchmark AndroidControl-Pro and model Magma-R1.">
+  <meta name="twitter:image" content="static/images/data_quality_vs_quantity.png">
+  <meta name="twitter:image:alt" content="Data Quality vs Quantity in GUI Agent Training">
+
+  <!-- Academic citations -->
+  <meta name="citation_title" content="AndroidControl-Pro: Revealing the True Potential of GUI Agents through Benchmark Purification">
+  <meta name="citation_author" content="Anonymous">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="Under Review">
+  <meta name="citation_pdf_url" content="static/images/AndroidControl-Pro-Magma-Manuscript.pdf">
+  
+  <title>AndroidControl-Pro - Anonymous | Research</title>
+  
+  <link rel="icon" type="image/x-icon" href="BA_icon.jpg">
+  <link rel="apple-touch-icon" href="BA_icon.jpg">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <style>
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    .publication-title {
+        font-weight: 800;
+        margin-bottom: 1rem !important;
+        line-height: 1.1 !important;  /* 调整行高让两行更紧凑 */
+    }
+    
+    .publication-authors {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .hero.teaser {
+        background-color: #fafafa !important;
+        border: none !important;
+        margin-top: 0 !important;
+    }
+    
+    .hero.teaser .subtitle {
+        margin-top: 1rem !important;
+        color: #4a4a4a !important;
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    #main-method-image {
+        max-width: 90% !important;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin: 0 auto;
+        display: block;
+    }
+    
+    /* 调整按钮样式，参考第一张图 */
+    .publication-links .button {
+        margin: 0.25rem;
+        font-size: 0.9rem;
+    }
+    
+    .section.contributions ul {
+        list-style-type: '✨ ';
+        padding-left: 2em;
+    }
+    .section.contributions li {
+        padding-bottom: 0.5em;
+    }
+    .bibtex-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .copy-bibtex-btn {
+      background-color: #f5f5f5;
+      border: 1px solid #dbdbdb;
+      border-radius: 4px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .copy-bibtex-btn:hover {
+      background-color: #e8e8e8;
+    }
+    .copy-bibtex-btn.copied {
+      background-color: #48c78e;
+      color: white;
+    }
+    
+    /* Scroll to top button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .scroll-to-top.visible {
+      opacity: 1;
+    }
+    .scroll-to-top:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+    }
+    
+    /* 减少section之间的间距 */
+    .section {
+      padding: 2rem 1.5rem !important;
+    }
+    
+    /* 让整体布局更紧凑 */
+    .container.is-max-desktop {
+      max-width: 1152px !important;
+    }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "AndroidControl-Pro: Revealing the True Potential of GUI Agents through Benchmark Purification",
+    "description": "We reveal systemic flaws in existing GUI benchmarks and introduce AndroidControl-Pro, a purified benchmark for accurate evaluation.",
+    "author": [{
+      "@type": "Person",
+      "name": "Anonymous"
+    }],
+    "datePublished": "2024-09-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Under Review"
+    },
+    "url": "https://YOUR_DOMAIN.com/AndroidControl-Pro",
+    "image": "data_quality_vs_quantity.png",
+    "keywords": ["GUI Agents", "Benchmark Purification", "Data Quality", "Reinforcement Learning", "Autonomous Agents"],
+    "abstract": "On-device virtual assistants like Siri and Google Assistant are increasingly pivotal, yet their capabilities are hamstrung by a reliance on rigid, developer-dependent APIs. GUI agents offer a powerful, API-independent alternative, but their adoption is hindered by the perception of poor performance...",
+    "isAccessibleForFree": true,
+    "about": [{
+      "@type": "Thing",
+      "name": "GUI Agents"
+    }, {
+      "@type": "Thing", 
+      "name": "Benchmark Purification"
+    }, {
+      "@type": "Thing",
+      "name": "Data Quality"
+    }]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero" style="padding-bottom: 1rem;">
+    <div class="hero-body" style="padding-bottom: 1rem;">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              AndroidControl-Pro:<br>
+              Revealing the True Potential of GUI Agents through Benchmark Purification
+            </h1>
+            <div class="is-size-5 publication-authors" style="margin-bottom: 0.5rem;">
+              <span class="author-block">
+                Anonymous Authors
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors" style="margin-bottom: 1rem;">
+              <span class="author-block">Under Review</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="static/images/AndroidControl-Pro-Magma-Manuscript.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/YOUR_REPO_HERE" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+
+            <span class="link-block">
+              <a href="https://huggingface.co/your-dataset" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-database"></i>
+              </span>
+              <span>Dataset</span>
+            </a>
+          </span>
+
+          <span class="link-block">
+            <a href="https://huggingface.co/your-model" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fas fa-robot"></i>
+            </span>
+            <span>Model</span>
+          </a>
+        </span>
+
+        <span class="link-block">
+          <a href="https://arxiv.org/abs/YOUR_ARXIV_ID" target="_blank"
+          class="external-link button is-normal is-rounded is-dark">
+          <span class="icon">
+            <i class="ai ai-arxiv"></i>
+          </span>
+          <span>arXiv</span>
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="hero teaser" style="padding-top: 1rem; padding-bottom: 2rem; background-color: #fafafa; border: none;">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <img src="static/images/method.png" alt="Overall pipeline of our work" id="main-method-image" style="max-width: 90%; margin: 0 auto; display: block;"/>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem; font-size: 1.1rem; color: #4a4a4a;">
+        <b>Our Integrated Pipeline.</b> Top: The Magma-R1 training process with GRPO. Bottom: The systematic benchmark purification process, transforming the flawed AndroidControl into the reliable AndroidControl-Pro.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            On-device virtual assistants like Siri and Google Assistant are increasingly pivotal, yet their capabilities are hamstrung by a reliance on rigid, developer-dependent APIs. GUI agents offer a powerful, API-independent alternative, but their adoption is hindered by the perception of poor performance, as 3B parameter models score as low as 60% on benchmarks like AndroidControl, far from viability for real-world use. Our work fundamentally challenges this perception by identifying the root cause: the benchmark itself is flawed. During post-training experiments, we discovered that the AndroidControl benchmark contains a significant rate of ambiguities and factual errors, leading to a severe underestimation of agent capabilities. To address this, we introduce AndroidControl-Pro, a new benchmark created through a systematic purification pipeline. On this reliable benchmark, state-of-the-art models achieve success rates approaching 80% on challenging tasks, reframing on-device GUI agents as a near-term reality. Furthermore, we demonstrate that data quality is paramount: our new SOTA model, Magma-R1, trained on just 2,400 curated samples, decisively outperforms models trained on over 31k noisy data points. We release our benchmark and model to accelerate the development of the next generation of powerful, on-device virtual assistants.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section contributions">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Key Contributions</h2>
+                <div class="content has-text-left">
+                    <ul>
+                        <li>We identify and systematically analyze critical flaws in a mainstream GUI agent benchmark, revealing that poor benchmark quality is a key bottleneck hindering the perceived viability of on-device GUI agents.</li>
+                        <li>We propose a reproducible, semi-automated benchmark purification pipeline to address these flaws, providing a methodology for creating more reliable evaluation tools.</li>
+                        <li>We release <b>AndroidControl-Pro</b>, a rigorously purified new benchmark. On this benchmark, we show that existing models are far more capable than previously believed, achieving performance that makes on-device GUI agents a practical possibility.</li>
+                        <li>We open-source <b>Magma-R1</b>, a new state-of-the-art model that, through training on a small, high-quality dataset, proves that <b>data quality is the most critical factor</b> for unlocking high performance in GUI agents.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Key Results & Insights</h2>
+      
+      <!-- 第一个结果 - 数据质量 vs 数量 -->
+      <div class="columns is-centered is-vcentered" style="margin-bottom: 3rem;">
+        <div class="column is-6">
+          <img src="static/images/data_quality_vs_quantity.png" alt="Data Quality vs. Quantity Graph" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"/>
+        </div>
+        <div class="column is-6">
+          <h3 class="title is-4">Quality over Quantity</h3>
+          <p class="content">
+            Our Magma-R1 model, trained on just <strong>2,400 purified samples</strong>, decisively outperforms models trained on over <strong>31k noisy samples</strong>. This demonstrates that data quality is fundamentally more important than data quantity in training high-performance GUI agents.
+          </p>
+        </div>
+      </div>
+
+      <!-- 第二个结果 - 系统性基准缺陷 -->
+      <div class="columns is-centered is-vcentered" style="margin-bottom: 3rem;">
+        <div class="column is-6">
+          <h3 class="title is-4">Systematic Benchmark Flaws</h3>
+          <p class="content">
+            We identified <strong>three major error types</strong> in the original AndroidControl benchmark: Unclear Tasks, Multiple Valid Actions, and Wrong Ground Truth. These systematic flaws led to severe underestimation of agent capabilities.
+          </p>
+        </div>
+        <div class="column is-6">
+          <img src="static/images/casestudy.png" alt="Examples of benchmark deficiencies" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"/>
+        </div>
+      </div>
+
+      <!-- 第三个结果 - 评估方法改进 -->
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-6">
+          <img src="static/images/sub_method.png" alt="Grounding Optimization from Point to Box" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"/>
+        </div>
+        <div class="column is-6">
+          <h3 class="title is-4">From Coordinate Matching to Intent Alignment</h3>
+          <p class="content">
+            We refine evaluation by checking if an action falls within the target element's <strong>bounding box</strong> rather than exact coordinate matching, better reflecting user intent and providing more reliable performance assessment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Performance Results</h2>
+    
+    <!-- Table 1 -->
+    <div class="columns is-centered" style="margin-top: 2rem;">
+      <div class="column is-four-fifths">
+        <figure class="image">
+          <img src="static/images/table1.jpg" alt="Table 1: Performance comparison of GUI agents on AndroidControl-Pro" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </figure>
+        <p class="has-text-centered content is-small" style="margin-top: 1em;">
+          <b>Table 1.</b> Performance comparison of GUI agents on AndroidControl-Pro. Grounding Accuracy (GA) for all models is evaluated using our proposed E<sub>bbox</sub>. The best results are in <b>bold</b>, and the second best are <u>underlined</u>.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Table 2 -->
+    <div class="columns is-centered" style="margin-top: 3rem;">
+      <div class="column is-four-fifths">
+        <figure class="image">
+          <img src="static/images/table2.jpg" alt="Table 2: Ablation analysis of the benchmark purification process" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </figure>
+        <p class="has-text-centered content is-small" style="margin-top: 1em;">
+          <b>Table 2.</b> Ablation analysis of the benchmark purification process on the Hard subset. SR Impr. (G) shows the SR gain from Origin-Bench to AndroidControl-Pro-G. SR Impr. (T) shows the SR gain from AndroidControl-Pro-G to the final AndroidControl-Pro. Best results are in <b>bold</b>, second best are <u>underlined</u>.
+        </p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span id="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@inproceedings{anonymous2024androidcontrolpro,
+  title={AndroidControl-Pro: Revealing the True Potential of GUI Agents through Benchmark Purification},
+  author={Anonymous},
+  booktitle={Under Review},
+  year={2024}
+}</code></pre>
+    </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            Website source code is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll to top functionality
+  function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // Show/hide scroll button
+  window.onscroll = function() {
+    const scrollBtn = document.querySelector('.scroll-to-top');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  };
+
+  // Enhanced BibTeX copy function
+  function copyBibTeX() {
+    const bibtexCode = document.getElementById('bibtex-code');
+    const range = document.createRange();
+    range.selectNode(bibtexCode);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+    
+    const copyBtn = document.querySelector('.copy-bibtex-btn');
+    const copyText = document.getElementById('copy-text');
+    
+    copyBtn.classList.add('copied');
+    copyText.textContent = 'Copied!';
+    
+    setTimeout(() => {
+      copyBtn.classList.remove('copied');
+      copyText.textContent = 'Copy';
+    }, 2000);
+  }
+</script>
+
+</body>
+</html>
