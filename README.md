@@ -24,7 +24,7 @@ Our research reveals that issue lies not only with the models but with the bench
 On this enhanced benchmark, state-of-the-art models achieve success rates nearing 80% on complex tasks, reflecting that on-device GUI agents are actually closer to practical deployment than previously thought. We also trained our new SOTA model, **Magma-R1**, on just 2,400 curated samples, which matches the performance of previous models trained on over 31,000 samples.
 
 <div align="center">
-  <img src="static/images/method.png" width="90%" alt="Method Overview">
+  <img src="static/images/method_1021_1355-compress.png" width="90%" alt="Method Overview">
   <p><i>Overview of our integrated pipeline for Magma-R1 training and AndroidControl-Curated creation.</i></p>
 </div>
 
