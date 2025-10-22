@@ -5,9 +5,9 @@
 </h1>
 
 <p align="center">
-  <a href="YOUR_ARXIV_PAPER_LINK"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?style=flat&logo=arxiv&logoColor=white" alt="arXiv Paper"></a>
-  <a href="YOUR_HUGGINGFACE_DATASET_LINK"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Dataset-ff9800?style=flat" alt="Hugging Face Dataset"></a>
-  <a href="YOUR_HUGGINGFACE_MODEL_LINK"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Models-ff9800?style=flat" alt="Hugging Face Model"></a>
+  <a href="https://arxiv.org/abs/2510.18488v1"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?style=flat&logo=arxiv&logoColor=white" alt="arXiv Paper"></a>
+  <a href="https://huggingface.co/datasets/batwBMW/AndroidControl_Curated"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Dataset-ff9800?style=flat" alt="Hugging Face Dataset"></a>
+  <a href="https://huggingface.co/batwBMW/Magma-R1"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Models-ff9800?style=flat" alt="Hugging Face Model"></a>
 </p>
 
 <br>
