@@ -12,7 +12,7 @@
 
 <br>
 <p align="center">
-  <strong>This is the official repository for the paper <a href="YOUR_ARXIV_PAPER_LINK">AndroidControl-Curated</a>.</strong>
+  <strong>This is the official repository for the paper <a href="https://github.com/batechworks/AndroidControl_Curated">AndroidControl-Curated</a>.</strong>
 </p>
 
 ## 🌟 Overview
