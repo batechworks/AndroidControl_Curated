@@ -75,6 +75,7 @@ def get_all_response_android_batch(benchmark_json_path, result_path, model_path=
     # 遍历dict
     all_image_paths = []
     all_prompts = []
+    all_benchmark_to_process = []
     res_existing = []
     for benchmark_dict in tqdm(benchmark_dict_list):
         # 获取图片路径, 这里result_dir就是图片的根目录
@@ -137,12 +138,13 @@ def get_all_response_android_batch(benchmark_json_path, result_path, model_path=
         )
         all_image_paths.append(image_path)
         all_prompts.append(prompt)
+        all_benchmark_to_process.append(benchmark_dict)
     
     # 分批处理
     for i in tqdm(range(0, len(all_image_paths), batch_size)):
         image_list = all_image_paths[i:i+batch_size]
         prompt_list = all_prompts[i:i+batch_size]
-        benchmark_dict_tmp_list = benchmark_dict_list[i:i+batch_size]
+        benchmark_dict_tmp_list = all_benchmark_to_process[i:i+batch_size]
         st = time.time()
         res = ask_model(image_list, prompt_list, model_path)
         # print_with_color(f"================== ask_model time: {time.time() - st} ==================", "green")
