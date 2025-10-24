@@ -72,7 +72,7 @@ On this enhanced benchmark, state-of-the-art models achieve success rates nearin
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/batechworks/AndroidControl_Curated.git
-    cd YourRepoName
+    cd AndroidControl_Curated
     ```
 
 2.  **Install dependencies:**
