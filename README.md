@@ -134,7 +134,7 @@ If you find this work useful, a citation to the following paper would be appreci
 @article{leung2025androidcontrolcurated,
   title={AndroidControl-Curated: Revealing the True Potential of GUI Agents through Benchmark Purification},
   author={LEUNG Ho Fai (Kevin) and XI XiaoYan (Sibyl) and ZUO Fei (Eric)},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  journal={arXiv preprint arXiv:https://arxiv.org/abs/2510.18488v1},
   year={2025},
   institution={BMW ArcherMind Information Technology Co. Ltd. (BA TechWorks)}
 }
