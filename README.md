@@ -86,7 +86,7 @@ On this enhanced benchmark, state-of-the-art models achieve success rates nearin
 To reproduce the results on `AndroidControl-Curated`:
 
 1.  **Download the benchmark data:**
-    Download the processed test set from [Hugging Face](YOUR_HUGGINGFACE_DATASET_LINK) and place it in the `benchmark_resource/` directory. The directory should contain the following files:
+    Download the processed test set from [Hugging Face](https://huggingface.co/datasets/batwBMW/AndroidControl_Curated) and place it in the `benchmark_resource/` directory. The directory should contain the following files:
     - `android_control_high_bbox.json`
     - `android_control_high_point.json`
     - `android_control_low_bbox.json`
@@ -94,7 +94,7 @@ To reproduce the results on `AndroidControl-Curated`:
     - `android_control_high_task-improved.json`
 
 2.  **Download the model:**
-    Download the `Magma-R1` model weights from [Hugging Face](YOUR_HUGGINGFACE_MODEL_LINK) and place them in your desired location.
+    Download the `Magma-R1` model weights from [Hugging Face](https://huggingface.co/batwBMW/Magma-R1) and place them in your desired location.
 
 3.  **Run the evaluation script:**
     Execute the following command, making sure to update the paths to your model and the benchmark image directory.
