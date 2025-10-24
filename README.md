@@ -29,7 +29,7 @@ On this enhanced benchmark, state-of-the-art models achieve success rates nearin
 </div>
 
 ## 🔥 News
-- 🔥 ***`2025/10/21`*** Our paper "[AndroidControl-Curated: Revealing the True Potential of GUI Agents through Benchmark Purification](YOUR_ARXIV_PAPER_LINK)" released.
+- 🔥 ***`2025/10/21`*** Our paper "[AndroidControl-Curated: Revealing the True Potential of GUI Agents through Benchmark Purification](https://arxiv.org/abs/2510.18488v1)" released.
 
 ## 🚀 Updates
 - ***`2025/10/21`*** The source code for `AndroidControl-Curated` and `Magma-R1` has been released.
